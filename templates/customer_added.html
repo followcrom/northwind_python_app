@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Added</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2; /* Or your desired shade */
+        }
+    </style>
+</head>
+<body>
+    <img src="../static/sparta_logo.png" alt="SPARTA!" height="100"/>
+    <h1>Customer Successfully Added</h1>
+    <table>
+        <tbody>
+            <tr>
+                <td>Customer Name</td>
+                <td>{{ customer.name }}</td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>{{ customer.address }}</td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>{{ customer.city }}</td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>{{ customer.country }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br/>
+    <a href="/">Click here to go back to the home page</a>
+</body>
+</html>

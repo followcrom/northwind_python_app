@@ -13,7 +13,8 @@ except KeyError as ke:
     print('Required database connection uri not found in environment variables:', ke)
     print('This should be something like -- mysql://uid:pwd@host:port/schema --')
     print('Continuing with default connection string -- mysql+pymysql://root:root@localhost:3306/northwind --')
-    db_connection_uri = 'mysql+pymysql://root:root@localhost:3306/northwind'
+    db_connection_uri = 'mysql+pymysql://root@localhost:3306/northwind'
+    # db_connection_uri = 'mysql+pymysql://root:root@localhost:3306/northwind'
 print('Setting SQLALCHEMY_DATABASE_URI to --', db_connection_uri, '--')
 app.config["SQLALCHEMY_DATABASE_URI"] = db_connection_uri
 

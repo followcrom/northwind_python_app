@@ -1,3 +1,17 @@
+# Two Tier Web Application
+
+## The Database
+
+Our task was to create a two-tier web application that interacts with a MySQL database. The database schema was provided in the form of a SQL script. The schema is based on the Northwind database, a sample database used by Microsoft for tutorials and demonstrations.
+
+We are using an AWS EC2 instance running Ubuntu 20.04 to host the MySQL database. The database is accessible by the application, which is running on a second AWS EC2 instance.
+
+Things to consider when setting up the database:
+
+- The database should be configured to allow remote connections.
+- The database should be populated with the schema provided.
+- A new user should be created with the necessary privileges to interact with the database.
+
 ## Set-up script
 
 This can run on a fresh Ubuntu 20.04 server to install MySQL Server, configure it for remote connections, clone the repository containing the application, import the database schema, and create a new MySQL user 'group_2' with the necessary privileges.
@@ -37,3 +51,7 @@ sudo mysql -u root -proot -e "CREATE USER IF NOT EXISTS 'group_2'@'%' IDENTIFIED
 sudo mysql -u root -proot -e "GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'group_2'@'%'"
 sudo mysql -u root -proot -e "FLUSH PRIVILEGES;"
 ```
+
+## Automating the Set-up
+
+We wanted to automate the set-up process as much as possible. This would make it easier to deploy the application in different environments and reduce the chances of human error. To do this, we utilized Terraform to provision the EC2 instances, and included the above bash script as user data, which would run on the creation of the EC2 instance.

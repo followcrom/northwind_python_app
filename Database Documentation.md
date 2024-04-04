@@ -1,5 +1,7 @@
 ## Set-up script
 
+This can run on a fresh Ubuntu 20.04 server to install MySQL Server, configure it for remote connections, clone the repository containing the application, import the database schema, and create a new MySQL user 'group_2' with the necessary privileges.
+
 ```bash
 #!/bin/bash
 
